@@ -36,7 +36,7 @@ if __name__ == '__main__':
             if msg is None:
                 
                 record_value = msg.value()
-				record_value = None
+		record_value = None
                 
     except KeyboardInterrupt:
         pass
