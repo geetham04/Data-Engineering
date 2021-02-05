@@ -38,28 +38,26 @@ else:
 # Limit Assertions
 
 # 1. Latitude Degrees field must be between 41 and 46 inclusive
-empty_records=0
-nan_count=0
+invalid_records=0
 for data in df['Latitude Degrees']:
     if(data>=41 and data<47):
-        empty_records+=1
-    elif math.isnan(data):
-        nan_count+=1
-        
-print('Not Valid records',empty_records)
-print('Records with null values',nan_count)
-
+        pass
+    else:
+        Print('Invalid record')
+        invalid_records += 1
+if(invalid_records == 0):
+    print('All are Valid')
+    
 # 2. Crash Month field value must be in list 01-12
-empty_records=0
-nan_count=0
+invalid_records=0
 for data in df['Crash Month']:
     if(data>=1 and data<=12):
-        empty_records+=1
-    elif math.isnan(data):
-        nan_count+=1
-        
-print('Not Valid records',empty_records)
-print('Records with null values',nan_count)
+        pass
+    else:
+        print('Invalid record')
+        invalid_records += 1
+if(invalid_records == 0):
+    print('All are Valid')
 
 # 3. Crash Hour should be between 0-23 inclusive and 99 for unknown time
 invalid_records=0
