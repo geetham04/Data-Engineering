@@ -5,7 +5,7 @@ import datetime
 covidData = pd.read_csv("COVID_county_data.csv")
 
 counties = covidData["county"].unique()
-entries = []
+List_entries = []
 for county in counties:
     # Find all the entries for the county
     county_data = covidData[covidData['county'] == county]
@@ -28,7 +28,7 @@ for county in counties:
         deathsReported_dec2020 = dec2020_data['deaths'].sum()
         
         # Append the fields
-        entries.append([state, county, total_cases, total_deaths, casesReported_dec2020, deathsReported_dec2020])
+        List_entries.append([state, county, total_cases, total_deaths, casesReported_dec2020, deathsReported_dec2020])
 
 # Write the saved values to a new csv
 parsed_covid_data = pd.DataFrame(entries, columns=["State", "County", "TotalCases", "TotalDeaths", "Dec2020Cases", "Dec2020Deaths"])
